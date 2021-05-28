@@ -11,7 +11,7 @@ form.addEventListener('submit', e => {
   //tampilkan tombol loading, hilangkan tombol kirim
   btnLoading.classList.toggle('d-none');
   btnKirim.classList.toggle('d-none');
-
+  
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
     .then(response => {
       //tampilkan tombol kirim hilangkan tombol loading
@@ -21,7 +21,7 @@ form.addEventListener('submit', e => {
       myAlert.classList.toggle('d-none')
       //reset isi form
       form.reset()
-
+      
       console.log('Success!', response)
   })
     .catch(error => console.error('Error!', error.message))
